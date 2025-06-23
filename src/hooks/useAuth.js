@@ -14,7 +14,7 @@ export const useAuth = () => {
                 // const roles = app.user?.PROFIL.map(profil => [...profil.ROLES]).flat();
                 const roles = app.user?.profil?.ROLES?.flat();
 
-                return Boolean(roles?.find(r => r.ROLE_NOM === role))
+                return Boolean(roles?.find(r => r.DESCRIPTION === role))
             }
         },
         handleLogin: app.handleLogin,

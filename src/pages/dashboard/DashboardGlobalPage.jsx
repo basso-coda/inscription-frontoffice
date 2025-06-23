@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Card } from 'primereact/card';
 import fetchApi from '../../helpers/fetchApi';
 import DashboardSkeletons from '@/components/skeletons/DashboardSkeletons';
@@ -15,7 +16,9 @@ const DashboardGlobalPage = () => {
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     };
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Dashboard - Vue d'ensemble"
@@ -31,7 +34,7 @@ const DashboardGlobalPage = () => {
                     label="Faire une demande d'admission"
                     icon="pi pi-send"
                     className="p-button-rounded p-button-lg p-button-info"
-                    onClick={() => navigate('')}
+                    onClick={() => navigate('/demande-inscription')}
                 />
             </div>
 

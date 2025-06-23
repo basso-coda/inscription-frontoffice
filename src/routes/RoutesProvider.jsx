@@ -9,6 +9,8 @@ import roles_routes from "./administrations/roles_routes";
 import auth_routes from "./auth_routes";
 import ForbiddenPage from "@/pages/ForbiddenPage";
 import DashboardGlobalPage from "@/pages/dashboard/DashboardGlobalPage";
+import demande_inscription_routes from "./candidatures/demande_inscription_routes";
+import paiement_routes from "./candidatures/paiement_routes";
 
 
 
@@ -23,6 +25,8 @@ export default function RoutesProvider() {
         {utilisateurs_routes}
         {profils_routes}
         {roles_routes}
+        {demande_inscription_routes}
+        {paiement_routes}
         <Route path="/dashboard" element={<ProtectedRoute><DashboardGlobalPage /></ProtectedRoute>} />
         <Route path="/forbidden" element={<ProtectedRoute><ForbiddenPage /></ProtectedRoute>} />
       </Route>

@@ -3,7 +3,7 @@ import { Button } from "primereact/button";
 import BreadCrumb from "./BreadCrumb";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "primereact/menu";
 import { useApp } from "@/hooks/useApp";
 import config from "@/config";
@@ -235,7 +235,25 @@ export default function Header() {
         </div> */}
         <BreadCrumb />
       </div>
-
+      <div>
+        {!user.hasPermission('list-demande') && <div className="nav-item">
+              <NavLink
+                to={"list-demande"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "admin text-decoration-none rounded d-block"
+                    : "text-decoration-none rounded d-block"
+                }
+                href="/list-demande"
+              >
+                <div className="d-flex align-items-center justify-content-between py-2 px-3">
+                  <div className="d-flex align-items-center justify-content-between">
+                    <span className="menu-title">Voir mon Dossier</span>
+                  </div>
+                </div>
+              </NavLink>
+            </div>}
+      </div>
       <div className="flex align-items-center py-2">
 
         <Button
