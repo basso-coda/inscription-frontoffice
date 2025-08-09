@@ -241,8 +241,8 @@ export default function Header() {
                 to={"list-demande"}
                 className={({ isActive }) =>
                   isActive
-                    ? "admin text-decoration-none rounded d-block"
-                    : "text-decoration-none rounded d-block"
+                    ? "bg-yellow-400 text-white text-decoration-none rounded d-block"
+                    : "text-decoration-none rounded d-block hover:bg-yellow-400 hover:text-white"
                 }
                 href="/list-demande"
               >
@@ -256,7 +256,7 @@ export default function Header() {
       </div>
       <div className="flex align-items-center py-2">
 
-        <Button
+        {/* <Button
           rounded
           text
           aria-label="Notifications"
@@ -286,7 +286,7 @@ export default function Header() {
           ></Badge>
         </Button>
 
-        <Menu ref={notifMenuRef} model={notifItems} popup />
+        <Menu ref={notifMenuRef} model={notifItems} popup /> */}
 
         {/* <Button
           rounded

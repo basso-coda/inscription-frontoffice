@@ -91,7 +91,7 @@ export default function DemandeInscription() {
     return (
         <div className="container py-4" style={{ maxHeight: 'calc(100vh - 200px)', overflowY: 'auto' }}>
             <div className="card p-4 max-w-4xl mx-auto">
-                <Steps model={steps} activeIndex={activeStep} readOnly className="mb-6" />
+                <Steps model={steps} activeIndex={activeStep} readOnly className="mb-6 custom-steps" />
                 {renderStepComponent()}
             </div>
         </div>

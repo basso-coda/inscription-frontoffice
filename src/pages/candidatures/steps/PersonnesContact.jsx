@@ -188,7 +188,7 @@ const PersonnesContact = ({ data, updateFormData, onNext, onBack }) => {
         ))}
 
         <div className="text-right">
-          <Button icon="pi pi-plus" onClick={ajouterPersonne} />
+          <Button icon="pi pi-plus" className="bg-yellow-400 rounded-button" onClick={ajouterPersonne} />
         </div>
 
       </div>
@@ -197,12 +197,13 @@ const PersonnesContact = ({ data, updateFormData, onNext, onBack }) => {
             label="Retour"
             icon="pi pi-arrow-left"
             onClick={onBack}
-            className="p-button-secondary"
+            className="p-button-secondary rounded-button"
           />
           <Button
             label="Suivant"
             icon="pi pi-arrow-right"
             iconPos="right"
+            className="bg-yellow-400 rounded-button"
             onClick={handleNext}
             disabled={personnes.length === 0}
           />

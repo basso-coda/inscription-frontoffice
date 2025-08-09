@@ -4,7 +4,7 @@ import { Card } from 'primereact/card';
 import fetchApi from '../../helpers/fetchApi';
 import DashboardSkeletons from '@/components/skeletons/DashboardSkeletons';
 import { Button } from 'primereact/button';
-import image from "../../assets/image (7).jpg"
+import image from "../../assets/semaine-integration-etudiants.jpg"
 
 const DashboardGlobalPage = () => {
     const cardStyle = {
@@ -28,12 +28,13 @@ const DashboardGlobalPage = () => {
         <div className="px-4 py-3 main_content">
             {/* Section d'accueil */}
             <div className="text-center mb-5">
-                <h2 className="text-2xl font-bold mb-2">Bienvenue sur <span style={{ color: '#007ad9' }}>monDossier</span></h2>
+                <h2 className="text-2xl font-bold mb-2">Bienvenue sur <span style={{ color: '#de9d0a' }}>monDossier</span></h2>
                 <p className="text-gray-600 mb-4">Votre plateforme numérique pour simplifier les demandes d'admission à l'université BIU</p>
                 <Button
                     label="Faire une demande d'admission"
                     icon="pi pi-send"
-                    className="p-button-rounded p-button-lg p-button-info"
+                    className="p-button-rounded rounded-button bg-yellow-400 p-button-lg"
+                    style={{ fontSize: '18px', fontWeight: 'bold' }}
                     onClick={() => navigate('/demande-inscription')}
                 />
             </div>

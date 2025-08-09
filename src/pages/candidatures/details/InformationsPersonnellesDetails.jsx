@@ -64,13 +64,6 @@ export default function InformationsPersonnellesDetails(props) {
             </tr>
 
             <tr>
-                <th> {`Commune de délivrance`}</th>
-                <td colSpan="3">
-                    {props.data?.COMMUNE_DELIVRANCE}
-                </td>
-            </tr>
-
-            <tr>
                 <th> {`Date de délivrance`}</th>
                 <td colSpan="3">{props.data?.DATE_DELIVRANCE ? formatDate(new Date(props.data?.DATE_DELIVRANCE)) : '-'}</td>
             </tr>

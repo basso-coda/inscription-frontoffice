@@ -282,7 +282,7 @@ const LoginPage = () => {
                                                     label="Se connecter"
                                                     icon="pi pi-sign-in"
                                                     type="submit"
-                                                    className="center mt-4 bitwi-button rounded-button"
+                                                    className="center mt-4 bg-yellow-400 rounded-button"
                                                     size="small"
                                                     loading={isSubmitting}
                                                 /> <br />
@@ -296,147 +296,149 @@ const LoginPage = () => {
                                         </form>
                                     ) : (
                                         <form className="form w-75" onSubmit={handleRegister}>
-                                            <div className="form-group w-100">
-                                                <label htmlFor="NOM" className="label mb-1">
-                                                    Nom
-                                                    <span style={{ color: 'red', fontSize: 18 }}>*</span>
-                                                </label>
-                                                <div className="col-sm">
-                                                    <InputText
-                                                        type="text"
-                                                        id="NOM"
-                                                        name="NOM"
-                                                        value={data.NOM}
-                                                        style={{ borderRadius: "0px" }}
-                                                        onChange={e => setData(data => ({ ...data, NOM: e.target.value }))}
-                                                        className={`w-100 is-invalid ${errors?.NOM ? "p-invalid" : ""}`}
-                                                    />
-                                                    {errors?.NOM && <div
-                                                        className="invalid-feedback"
-                                                        style={{ minHeight: 0, display: "block" }}
-                                                    >
-                                                        {errors?.NOM}
-                                                    </div>}
+                                            <div className="form-group col-sm">
+                                                <div className="row">
+                                                    <div className="col-6">
+                                                        <label htmlFor="NOM" className="label mb-1">
+                                                            Nom
+                                                            <span style={{ color: 'red', fontSize: 18 }}>*</span>
+                                                        </label>
+                                                        <InputText
+                                                            type="text"
+                                                            id="NOM"
+                                                            name="NOM"
+                                                            value={data.NOM}
+                                                            style={{ borderRadius: "0px" }}
+                                                            onChange={e => setData(data => ({ ...data, NOM: e.target.value }))}
+                                                            className={`w-100 is-invalid ${errors?.NOM ? "p-invalid" : ""}`}
+                                                        />
+                                                        {errors?.NOM && <div
+                                                            className="invalid-feedback"
+                                                            style={{ minHeight: 0, display: "block" }}
+                                                        >
+                                                            {errors?.NOM}
+                                                        </div>}
+                                                    </div>
+                                                    <div className="col-6">
+                                                        <label htmlFor="PRENOM" className="label mb-1">
+                                                            Prenom
+                                                            <span style={{ color: 'red', fontSize: 18 }}>*</span>
+                                                        </label>
+                                                        <InputText
+                                                            type="text"
+                                                            id="PRENOM"
+                                                            name="PRENOM"
+                                                            value={data.PRENOM}
+                                                            style={{ borderRadius: "0px" }}
+                                                            onChange={e => setData(data => ({ ...data, PRENOM: e.target.value }))}
+                                                            className={`w-100 is-invalid ${errors?.PRENOM ? "p-invalid" : ""}`}
+                                                        />
+                                                        {errors?.PRENOM && <div
+                                                            className="invalid-feedback"
+                                                            style={{ minHeight: 0, display: "block" }}
+                                                        >
+                                                            {errors?.PRENOM}
+                                                        </div>}
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div className="form-group col-sm">
+                                                <div className="row">
+                                                    <div className="col-6">
+                                                        <label htmlFor="USERNAME" className="label mb-1">
+                                                            Username
+                                                            <span style={{ color: 'red', fontSize: 18 }}>*</span>
+                                                        </label>
+                                                        <InputText
+                                                            type="text"
+                                                            id="USERNAME"
+                                                            name="USERNAME"
+                                                            value={data.USERNAME}
+                                                            style={{ borderRadius: "0px" }}
+                                                            onChange={e => setData(data => ({ ...data, USERNAME: e.target.value }))}
+                                                            className={`w-100 is-invalid ${errors?.USERNAME ? "p-invalid" : ""}`}
+                                                        />
+                                                        {errors?.USERNAME && <div
+                                                            className="invalid-feedback"
+                                                            style={{ minHeight: 0, display: "block" }}
+                                                        >
+                                                            {errors?.USERNAME}
+                                                        </div>}
+                                                    </div>
+                                                    <div className="col-6">
+                                                        <label htmlFor="TELEPHONE" className="label mb-1">
+                                                            Téléphone
+                                                            <span style={{ color: 'red', fontSize: 18 }}>*</span>
+                                                        </label>
+                                                        <InputText
+                                                            type="text"
+                                                            id="TELEPHONE"
+                                                            name="TELEPHONE"
+                                                            value={data.TELEPHONE}
+                                                            style={{ borderRadius: "0px" }}
+                                                            onChange={e => setData(data => ({ ...data, TELEPHONE: e.target.value }))}
+                                                            className={`w-100 is-invalid ${errors?.TELEPHONE ? "p-invalid" : ""}`}
+                                                        />
+                                                        {errors?.TELEPHONE && <div
+                                                            className="invalid-feedback"
+                                                            style={{ minHeight: 0, display: "block" }}
+                                                        >
+                                                            {errors?.TELEPHONE}
+                                                        </div>}
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="form-group w-100">
-                                                <label htmlFor="PRENOM" className="label mb-1">
-                                                    Prenom
-                                                    <span style={{ color: 'red', fontSize: 18 }}>*</span>
-                                                </label>
-                                                <div className="col-sm">
-                                                    <InputText
-                                                        type="text"
-                                                        id="PRENOM"
-                                                        name="PRENOM"
-                                                        value={data.PRENOM}
-                                                        style={{ borderRadius: "0px" }}
-                                                        onChange={e => setData(data => ({ ...data, PRENOM: e.target.value }))}
-                                                        className={`w-100 is-invalid ${errors?.PRENOM ? "p-invalid" : ""}`}
-                                                    />
-                                                    {errors?.PRENOM && <div
-                                                        className="invalid-feedback"
-                                                        style={{ minHeight: 0, display: "block" }}
-                                                    >
-                                                        {errors?.PRENOM}
-                                                    </div>}
+                                            <div className="form-group col-sm">
+                                                <div className="row">
+                                                    <div className="col-6">
+                                                        <label htmlFor="EMAIL" className="label mb-1">
+                                                            Email
+                                                            <span style={{ color: 'red', fontSize: 18 }}>*</span>
+                                                        </label>
+                                                        <InputText
+                                                            type="email"
+                                                            id="EMAIL"
+                                                            name="EMAIL"
+                                                            value={data.EMAIL}
+                                                            style={{ borderRadius: "0px" }}
+                                                            onChange={e => setData(data => ({ ...data, EMAIL: e.target.value }))}
+                                                            className={`w-100 is-invalid ${errors?.EMAIL ? "p-invalid" : ""}`}
+                                                        />
+                                                        {errors?.EMAIL && <div
+                                                            className="invalid-feedback"
+                                                            style={{ minHeight: 0, display: "block" }}
+                                                        >
+                                                            {errors?.EMAIL}
+                                                        </div>}
+                                                    </div>
+                                                    <div className="col-6">
+                                                        <label htmlFor="sexe" className="label mb-1">Sexe
+                                                            <span style={{ color: 'red', fontSize: 18 }}>*</span>
+                                                        </label>
+                                                        <Dropdown
+                                                            id="sexe"
+                                                            name="sexe"
+                                                            value={data.SEXE_ID}
+                                                            onChange={(e) => setData(d => ({ ...d, SEXE_ID: e.value }))}
+                                                            options={sexes}
+                                                            optionLabel="SEXE_DESCRIPTION"
+                                                            placeholder="Séléctionner le sexe"
+                                                            filter
+                                                            style={{ borderRadius: 0 }}
+                                                            className="w-full" />
+                    
+                                                        {errors?.SEXE_ID && <div
+                                                            className="invalid-feedback"
+                                                            style={{ minHeight: 0, display: "block" }}
+                                                        >
+                                                        </div>}
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="form-group w-100">
-                                                <label htmlFor="USERNAME" className="label mb-1">
-                                                    Username
-                                                    <span style={{ color: 'red', fontSize: 18 }}>*</span>
-                                                </label>
-                                                <div className="col-sm">
-                                                    <InputText
-                                                        type="text"
-                                                        id="USERNAME"
-                                                        name="USERNAME"
-                                                        value={data.USERNAME}
-                                                        style={{ borderRadius: "0px" }}
-                                                        onChange={e => setData(data => ({ ...data, USERNAME: e.target.value }))}
-                                                        className={`w-100 is-invalid ${errors?.USERNAME ? "p-invalid" : ""}`}
-                                                    />
-                                                    {errors?.USERNAME && <div
-                                                        className="invalid-feedback"
-                                                        style={{ minHeight: 0, display: "block" }}
-                                                    >
-                                                        {errors?.USERNAME}
-                                                    </div>}
-                                                </div>
-                                            </div>
-                                            <div className="form-group w-100">
-                                                <label htmlFor="TELEPHONE" className="label mb-1">
-                                                    Téléphone
-                                                    <span style={{ color: 'red', fontSize: 18 }}>*</span>
-                                                </label>
-                                                <div className="col-sm">
-                                                    <InputText
-                                                        type="text"
-                                                        id="TELEPHONE"
-                                                        name="TELEPHONE"
-                                                        value={data.TELEPHONE}
-                                                        style={{ borderRadius: "0px" }}
-                                                        onChange={e => setData(data => ({ ...data, TELEPHONE: e.target.value }))}
-                                                        className={`w-100 is-invalid ${errors?.TELEPHONE ? "p-invalid" : ""}`}
-                                                    />
-                                                    {errors?.TELEPHONE && <div
-                                                        className="invalid-feedback"
-                                                        style={{ minHeight: 0, display: "block" }}
-                                                    >
-                                                        {errors?.TELEPHONE}
-                                                    </div>}
-                                                </div>
-                                            </div>
-                                            <div className="form-group w-100">
-                                                <label htmlFor="EMAIL" className="label mb-1">
-                                                    Email
-                                                    <span style={{ color: 'red', fontSize: 18 }}>*</span>
-                                                </label>
-                                                <div className="col-sm">
-                                                    <InputText
-                                                        type="email"
-                                                        id="EMAIL"
-                                                        name="EMAIL"
-                                                        value={data.EMAIL}
-                                                        style={{ borderRadius: "0px" }}
-                                                        onChange={e => setData(data => ({ ...data, EMAIL: e.target.value }))}
-                                                        className={`w-100 is-invalid ${errors?.EMAIL ? "p-invalid" : ""}`}
-                                                    />
-                                                    {errors?.EMAIL && <div
-                                                        className="invalid-feedback"
-                                                        style={{ minHeight: 0, display: "block" }}
-                                                    >
-                                                        {errors?.EMAIL}
-                                                    </div>}
-                                                </div>
-                                            </div>
-                                            <div className="form-group w-100">
-                                                <label htmlFor="sexe" className="label mb-1">Sexe
-                                                    <span style={{ color: 'red', fontSize: 18 }}>*</span>
-                                                </label>
-                                                <div className="col-sm">
-                                                    <Dropdown
-                                                        id="sexe"
-                                                        name="sexe"
-                                                        value={data.SEXE_ID}
-                                                        onChange={(e) => setData(d => ({ ...d, SEXE_ID: e.value }))}
-                                                        options={sexes}
-                                                        optionLabel="SEXE_DESCRIPTION"
-                                                        placeholder="Séléctionner le sexe"
-                                                        filter
-                                                        style={{ borderRadius: 0 }}
-                                                        className="w-full" />
-                                                </div>
-            
-                                                {errors?.SEXE_ID && <div
-                                                    className="invalid-feedback"
-                                                    style={{ minHeight: 0, display: "block" }}
-                                                >
-                                                 </div>}
-                                            </div>
-                                            <div>
-                                                <label htmlFor="IMAGE" className="label mb-1">Profile photo
+                                                
+                                            <div className="col-sm">
+                                                <label htmlFor="IMAGE" className="label mb-1">Photo de profil
                                                     <span style={{ color: 'red', fontSize: 18 }}>*</span>
                                                 </label>
         
@@ -462,6 +464,7 @@ const LoginPage = () => {
                                                     onClear={() => {
                                                         setData(d => ({ ...d, "IMAGE": null }))
                                                     }}
+                                                    pt={{ chooseButton: { className: 'bg-yellow-400 rounded-button' }, cancelButton: { className: 'bg-yellow-400 rounded-button' } }}
                                                 />
             
                                                 {errors?.IMAGE && <div
@@ -477,7 +480,7 @@ const LoginPage = () => {
                                                     label="Valider"
                                                     icon="pi pi-sign-in"
                                                     type="submit"
-                                                    className="center mt-4 bitwi-button rounded-button"
+                                                    className="center mt-4 bg-yellow-400 rounded-button"
                                                     size="small"
                                                     loading={isSubmitting}
                                                 />
@@ -486,7 +489,7 @@ const LoginPage = () => {
                                         </form>
                                     )}
                                     
-                                    <div className="text-center mt-3">
+                                    <div className="text-center mt-1">
                                         {isLoginView ? (
                                             <span>
                                                 Vous n'avez pas encore de compte ?{" "}

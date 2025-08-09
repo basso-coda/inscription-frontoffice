@@ -142,4 +142,15 @@ ul {
 
 .rounded-button {
     border-radius: 12px;
+    border-color: yellow;
 }
+
+/* Couleur du cercle de l'étape active */
+.custom-steps .p-steps-item.p-highlight .p-steps-number {
+  background-color: #facc15 !important; /* yellow-400 */
+  color: white !important;
+  border-radius: 50%;
+}
+
+
+

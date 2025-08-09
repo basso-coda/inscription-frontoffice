@@ -141,10 +141,11 @@ const ChoixAcademique = ({ data, updateFormData, onNext }) => {
 
             <div className="flex justify-end mt-4">
                 <Button
-                label="Suivant"
-                icon="pi pi-arrow-right"
-                onClick={onNext}
-                disabled={!data.CLASSE_ID}
+                  label="Suivant"
+                  icon="pi pi-arrow-right"
+                  className="bg-yellow-400 rounded-button"
+                  onClick={onNext}
+                  disabled={!data.CLASSE_ID}
                 />
             </div>
         </>

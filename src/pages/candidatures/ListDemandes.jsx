@@ -234,35 +234,43 @@ export default function ListDemandes() {
                     let items = [
                         
                         {
-                        label: 'Plus de details',
-                        items: [
-                        {
-                          label: 'Détail',
-                          icon: 'pi pi-eye',
-                          template: item => (
-                            <div className='p-menuitem-content px-3'>
-                              <Link to={`/view-demande/${inViewMenuItem?.ID_CANDIDATURE}`} className="flex align-items-center p-2" style={{ textDecoration: "none", color: '#3d3d3d' }}>
-                                <span className={item.icon} />
-                                <span className="mx-2">{item.label}</span>
-                              </Link>
-                            </div>
-                          )
-                        },
-                        {
-                          label: 'Payer',
-                          icon: 'pi pi-pencil',
-                          template: item => (
-                            <div className='p-menuitem-content px-3'>
-                              <Link to={`/afripay-button-payment/${inViewMenuItem?.ID_CANDIDATURE}`} className="flex align-items-center p-2" style={{ textDecoration: "none", color: '#3d3d3d' }}>
-                                <span className={item.icon} />
-                                <span className="mx-2">{item.label}</span>
-                              </Link>
-                            </div>
-                          )
-                        },
-                        ]
-                        },
+                          label: 'Plus de details',
+                          items: [
+                            {
+                              label: 'Détail',
+                              icon: 'pi pi-eye',
+                              template: item => (
+                                <div className='p-menuitem-content px-3'>
+                                  <Link to={`/view-demande/${inViewMenuItem?.ID_CANDIDATURE}`} className="flex align-items-center p-2" style={{ textDecoration: "none", color: '#3d3d3d' }}>
+                                    <span className={item.icon} />
+                                    <span className="mx-2">{item.label}</span>
+                                  </Link>
+                                </div>
+                              )
+                            }
+                          ]
+                        }
                     ];
+
+                    // Afficher "Payer" seulement si statut == 3"
+                    if (item.STATUT_CANDIDATURE === 3) {
+                      items[0].items.push({
+                        label: 'Payer',
+                        icon: 'pi pi-credit-card',
+                        template: item => (
+                          <div className='p-menuitem-content px-3'>
+                            <Link 
+                              to={`/afripay-button-payment/${inViewMenuItem?.ID_CANDIDATURE}`} 
+                              className="flex align-items-center p-2" 
+                              style={{ textDecoration: "none", color: '#3d3d3d' }}
+                            >
+                              <span className={item.icon} />
+                              <span className="mx-2">{item.label}</span>
+                            </Link>
+                          </div>
+                        )
+                      });
+                    }
                     return (
                         <>
                         <Menu model={items} onHide={() => setInViewMenuItem(null)} popup ref={menu} id="popup_menu_right" popupAlignment="right" />
@@ -272,7 +280,7 @@ export default function ListDemandes() {
                         label="Options"
                         icon="pi pi-angle-down"
                         iconPos="right"
-                        className="mx-1 p-1 bitwi-button rounded-button"
+                        className="mx-1 p-1 bg-yellow-400 rounded-button"
                         onClick={(event) => {
                           setInViewMenuItem(item);
                           menu.current.toggle(event);

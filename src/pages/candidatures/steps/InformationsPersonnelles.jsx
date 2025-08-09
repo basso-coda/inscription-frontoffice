@@ -55,7 +55,7 @@ const InformationsPersonnelles = ({ data, updateFormData, onNext, onBack }) => {
         <div className="grid gap-4">
             <h2 className="text-xl font-semibold mb-1">Informations personnelles</h2>
             <p className="text-gray-500 mb-4">
-                N.B: Si vous êtes étranger, indiquez le numéro de votre passeport pour "numéro carte d'identité" et indiquez la ville ou le lieu où votre pièce d'identité a été délivrée pour "commune delivrance".
+                N.B: Si vous êtes étranger, indiquez le numéro de votre passeport pour "numéro carte d'identité".
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -144,16 +144,6 @@ const InformationsPersonnelles = ({ data, updateFormData, onNext, onBack }) => {
                 </span>
 
                 <span className="p-float-label">
-                <InputText
-                    id="commune"
-                    value={data.COMMUNE_DELIVRANCE}
-                    onChange={(e) => handleChange("COMMUNE_DELIVRANCE", e.target.value)}
-                    className="w-full"
-                />
-                <label htmlFor="commune">Commune de délivrance</label>
-                </span>
-
-                <span className="p-float-label">
                 <Calendar
                     id="dateDelivrance"
                     value={data.DATE_DELIVRANCE}
@@ -202,12 +192,13 @@ const InformationsPersonnelles = ({ data, updateFormData, onNext, onBack }) => {
                 label="Retour"
                 icon="pi pi-arrow-left"
                 onClick={onBack}
-                className="p-button-secondary"
+                className="p-button-secondary rounded-button"
                 />
                 <Button
                 label="Suivant"
                 icon="pi pi-arrow-right"
                 iconPos="right"
+                className="bg-yellow-400 rounded-button"
                 onClick={onNext}
                 disabled={!data.ETAT_CIVIL_ID || !data.NATIONALITE_ID || !data.NUM_CARTE_IDENTITE || !data.ADRESSE_RESIDENCE || !data.DATE_NAISSANCE || !data.DATE_DELIVRANCE || !data.COMMUNE_DELIVRANCE}
                 />

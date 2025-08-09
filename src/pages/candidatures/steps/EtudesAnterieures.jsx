@@ -54,11 +54,12 @@ const EtudesAnterieures = ({ data, updateFormData, onNext, onBack }) => {
       </div>
 
       <div className="flex justify-between mt-4">
-        <Button label="Retour" icon="pi pi-arrow-left" onClick={onBack} className="p-button-secondary" />
+        <Button label="Retour" icon="pi pi-arrow-left" onClick={onBack} className="p-button-secondary rounded-button" />
         <Button
           label="Suivant"
           icon="pi pi-arrow-right"
           iconPos="right"
+          className="bg-yellow-400 rounded-button"
           onClick={onNext}
           disabled={!isFormValid}
         />

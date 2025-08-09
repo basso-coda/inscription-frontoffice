@@ -106,6 +106,7 @@ const DocumentsExiges = ({ data, updateFormData, onNext, onBack }) => {
               accept=".pdf,.jpg,.jpeg,.png"
               maxFileSize={5 * 1024 * 1024}
               className="w-full"
+              disabled={!!data.DOCUMENTS?.[doc.ID_TYPE_DOCUMENT]} // Désactiver si document déjà présent
             />
             {data.DOCUMENTS?.[doc.ID_TYPE_DOCUMENT] && (
               <div className="flex items-center gap-2">
@@ -137,12 +138,13 @@ const DocumentsExiges = ({ data, updateFormData, onNext, onBack }) => {
           label="Retour"
           icon="pi pi-arrow-left"
           onClick={onBack}
-          className="p-button-secondary"
+          className="p-button-secondary rounded-button"
         />
         <Button
           label="Suivant"
           icon="pi pi-arrow-right"
           iconPos="right"
+          className="bg-yellow-400 rounded-button"
           onClick={onNext}
           disabled={pourcentage < 50}
         />
